@@ -42,16 +42,16 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
     try:
         if min(egg_weights) >= 0: 
             
-            ## CREATE A LIST OF LISTS OF ARGUMENTS DO THE FUNCTION, FOR EACH POSSIBLE EGG WEIGHT
-            list_parameters = list(map(lambda x: [egg_weights, target_weight - x, memo], egg_weights))             
+            ## CREATE A LIST OF LISTS OF ARGUMENTS TO THE FUNCTION, FOR EACH POSSIBLE EGG WEIGHT
+            list_parameters = list(map(lambda egg: [egg_weights, target_weight - egg, memo], egg_weights))             
                 
-            ## PASS THEM TO MAP, DOING THE FUNCTION TO EACH ITEM (SPREADING FIRST), AND TAKING THE MIN RESULT (LEGG EGGS)
+            ## PASS THEM TO MAP, CALLING THE FUNCTION TO EACH ITEM (SPREADING FIRST), AND TAKING THE MIN RESULT (BEST PATH)
             result = 1 + min(list(map(lambda x: dp_make_weight(*x), list_parameters)))                
                
             ## INSERT BETTER RESULT INTO MEMO
             memo[target_weight] = result            
             return result
-    except:
+    except TypeError:
         pass
 
     return result      

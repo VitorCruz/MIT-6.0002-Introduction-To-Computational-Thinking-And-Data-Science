@@ -219,9 +219,10 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
             ## INSERT BETTER RESULT INTO MEMO
             memo[target_weight] = result            
             return result
-    except:
+    except TypeError:
         pass
 
+    return result    
 
 # EXAMPLE TESTING CODE, feel free to add more if you'd like
 if __name__ == '__main__':
