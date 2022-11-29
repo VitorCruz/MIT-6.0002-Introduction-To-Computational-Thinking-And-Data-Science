@@ -17,7 +17,7 @@ from ps3_verify_movement27 import test_robot_movement
 
 
 ## USE A CONSTANT SEED FOR DEBUGGING PURPOSES
-random.seed(0)
+## random.seed(0)
 
 # === Provided class Position
 class Position(object):
