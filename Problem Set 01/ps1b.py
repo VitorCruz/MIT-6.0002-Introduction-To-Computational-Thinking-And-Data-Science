@@ -27,7 +27,7 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
     Returns: int, smallest number of eggs needed to make target weight
     """        
     
- ## RETURN THEN THERE IS NO MORE WEIGHT
+    ## RETURN WHEN THERE IS NO MORE WEIGHT
     if target_weight == 0:     
         return 0        
        
