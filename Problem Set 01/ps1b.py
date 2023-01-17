@@ -31,14 +31,14 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
     if target_weight == 0:     
         return 0        
        
-    ## IF THERES A RESULT IN MEMO, RESULT RESULT
+    ## IF THERES A RESULT IN MEMO, RETURN RESULT
     if target_weight in memo:            
         return memo[target_weight]              
     
     ## USE ONLY EGGS THAT WILL HAVE A >= 0 OUTCOME    
     egg_weights = [egg for egg in egg_weights if target_weight - egg >= 0]      
     
-    ## USE TRY TO CALL FUNCTION AGAIN ONLY WHEN THERE ARE AVAILABLE EGGS IN EGG_WEIGHTS, WHEN THERES AN EXCEPTION JUST PASS AND NOT CALL IT = INVALID SOLUTION
+    ## USE TRY TO CALL THE FUNCTION AGAIN ONLY WHEN THERE ARE AVAILABLE EGGS IN EGG_WEIGHTS, WHEN THERE'S AN EXCEPTION JUST PASS AND DON'T CALL IT (INVALID SOLUTION)
     try:
         if min(egg_weights) >= 0: 
             
